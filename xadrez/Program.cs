@@ -4,7 +4,7 @@
 //2° → Cama do jogo de xadrez (é que vai implementar as regras de jogo/peças)
 //3° → Cama de aplicação (é o aplicativo que consome as duas camadas e interege com o usuário)
 
-using Tabuleiro;
+using tabuleiro;
 
 namespace xadrez
 {

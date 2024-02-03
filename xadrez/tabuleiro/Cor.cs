@@ -6,7 +6,5 @@
         Preta,
         Azul,
         Amarela
-
-
     }
 }

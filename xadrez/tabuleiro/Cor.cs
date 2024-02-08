@@ -5,6 +5,8 @@
         Branca,
         Preta,
         Azul,
-        Amarela
+        Amarela,
+        Rosa,
+        Verde
     }
 }

@@ -2,7 +2,7 @@
 
 namespace tabuleiro
 {
-    public class Peca
+    public abstract class Peca
     {
         public Posicao? posicao { get; set; }
         public Cor cor { get; protected set; } //protected → só vai ser acessada por ela mesma e pela subclasses dela;
@@ -14,6 +14,13 @@ namespace tabuleiro
             this.tab = tab;
             this.cor = cor;
             this.qteMovimentos = 0;//a peça quando acaba de ser criada no construtor ela ainda não teve movimento, então inicia com 0;
+        }
+
+        public abstract bool[,] movimentosPossiveis();
+
+        public void incrementarQtdeMovimentos()
+        {
+            qteMovimentos++;
         }
     }
 }

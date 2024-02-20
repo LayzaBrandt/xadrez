@@ -4,6 +4,8 @@
 //2° → Cama do jogo de xadrez (é que vai implementar as regras de jogo/peças)
 //3° → Cama de aplicação (é o aplicativo que consome as duas camadas e interege com o usuário)
 
+using System.Net.Http.Headers;
+using System.Runtime.CompilerServices;
 using tabuleiro;
 
 namespace xadrez
@@ -20,8 +22,16 @@ namespace xadrez
                     Console.Clear();
                     Tela.imprimirTabuleiro(partida.tab);
 
+                    Console.WriteLine();
                     Console.Write("Origem: ");
                     Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
+
+                    bool[,] posicoesPossiveis = partida.tab.peca(origem).movimentosPossiveis();
+
+                    Console.Clear();
+                    Tela.imprimirTabuleiro(partida.tab, posicoesPossiveis);
+
+                    Console.WriteLine();
                     Console.Write("Destino: ");
                     Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
 

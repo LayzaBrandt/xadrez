@@ -25,8 +25,8 @@ namespace xadrez
         public void executaMovimento(Posicao origem, Posicao destino)
         {
             Peca p = tab.retirarPeca(origem);
-            tab.retirarPeca(destino);
             Peca pecaCapturada = tab.retirarPeca(destino);
+            tab.retirarPeca(destino);
             tab.colocarPeca(p, destino);
             if(pecaCapturada != null)
             {
@@ -58,7 +58,7 @@ namespace xadrez
 
         public void validarPosicaoDeDestino(Posicao origem, Posicao destino)
         {
-            if (tab.peca(origem).podeMoverPara(destino))
+            if (!tab.peca(origem).podeMoverPara(destino))
             {
                 throw new TabuleiroException("Posição de destino inválida!");
             }
@@ -85,7 +85,8 @@ namespace xadrez
                 {
                     aux.Add(x);
                 }
-            }return aux;
+            }
+            return aux;
         }
 
         public HashSet<Peca> pecasEmJogo(Cor cor)
@@ -111,13 +112,13 @@ namespace xadrez
 
         private void colocarPecas()
         {
-            colocarNovaPeca('a', 1, new Torre(tab, Cor.Branca));
-            colocarNovaPeca('h', 1, new Torre(tab, Cor.Branca));
-            colocarNovaPeca('d', 1, new Rei(tab, Cor.Branca));
+            colocarNovaPeca('a', 1, new Torre(tab, Cor.Preta));
+            colocarNovaPeca('h', 1, new Torre(tab, Cor.Preta));
+            colocarNovaPeca('d', 1, new Rei(tab, Cor.Preta));
 
-            colocarNovaPeca('a', 8, new Torre(tab, Cor.Preta));
-            colocarNovaPeca('h', 8, new Torre(tab, Cor.Preta));
-            colocarNovaPeca('d', 8, new Rei(tab, Cor.Preta));
+            colocarNovaPeca('a', 8, new Torre(tab, Cor.Branca));
+            colocarNovaPeca('h', 8, new Torre(tab, Cor.Branca));
+            colocarNovaPeca('d', 8, new Rei(tab, Cor.Branca));
 
         }
     }

@@ -16,7 +16,7 @@ namespace xadrez
         {
             try
             {
-                PartidadeDeXadrez partida = new PartidadeDeXadrez();
+                PartidaDeXadrez partida = new PartidaDeXadrez();
                 while (!partida.terminada)
                 {
                     try

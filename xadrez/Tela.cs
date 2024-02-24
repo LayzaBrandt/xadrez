@@ -1,15 +1,11 @@
-﻿using System.Dynamic;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography;
-using System.Xml.Serialization;
-using tabuleiro;
+﻿using tabuleiro;
 
 namespace xadrez
 {
     class Tela
     {
 
-        public static void imprimirPartida(PartidadeDeXadrez partida)
+        public static void imprimirPartida(PartidaDeXadrez partida)
         {
             imprimirTabuleiro(partida.tab);
             Console.WriteLine();
@@ -32,7 +28,7 @@ namespace xadrez
             }
         }
 
-        public static void imprimirPecasCapturadas(PartidadeDeXadrez partida)
+        public static void imprimirPecasCapturadas(PartidaDeXadrez partida)
         {
             Console.WriteLine("Pecas capturadas: ");
             Console.WriteLine("Brancas: ");
